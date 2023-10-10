@@ -1,0 +1,261 @@
+:root{
+    --mainColor: yellow;
+    --btnColor: #2B1651;
+    --btnColorHover:#5b4ef3;
+    --cardShadow:  rgb(169, 167, 167);
+    --borderColorCard:black;
+    --evaluation: rgb(255, 191, 0);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+
+main .content-search{
+    position: fixed;
+    top: 120px;
+    left: 130px;
+    width: 90%;
+    background-color: #5b4ef3;
+    z-index: 1000;
+    height: 100px;
+    border: none;
+    box-shadow: 5px 20px 80px var(--shadow);
+    transition: 10s;
+    border-radius: 200px;
+    overflow: hidden;
+    display: none;
+
+}
+
+
+main .content-search input{
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    font-size: 50px;
+    padding: 30px;
+}
+
+main .content-search button{
+    width: 10%;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    font-size: 50px;
+    background-color: #fff;
+    border: none;
+    color: var(--btnColorHover);
+    border-radius: 200px;
+    padding: 0 100px;
+
+}
+
+
+main .content-search button:hover{
+    background-color: var(--btnColorHover);
+    color: #fff;
+
+}
+
+
+main .title-page{
+    font-size: 1.5rem;
+    margin: 40px 0;
+}
+
+
+main hr{
+    
+    margin-bottom: 40px;
+}
+
+
+.container{
+    padding: 0 100px;
+}
+
+
+main .content-shopping{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    justify-content: space-between;
+}
+
+.card{
+    width: 400px;
+    height: 500px;
+    border: 5px solid var(--btnColor);
+    overflow: hidden;
+    position: relative;
+    transition: 0.5s;
+    
+}
+
+.card:hover{
+    box-shadow: 2px 0px 5px 7px var(--cardShadow);
+    padding: 10px;
+}
+
+
+.card .image{
+    position: relative;
+    
+}
+
+
+.card .image img{
+    width: 100%;
+    height: 250px;
+    object-fit: contain;
+}
+
+
+
+
+.card .image .more-details{
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px 10px 0;
+    color: #fff;
+    font-size: 1.5rem;
+    opacity: 0;
+    width: 100%;
+    height: 98%;
+    background-color: rgba(0, 0, 0, 0.374);
+    transition:  0.5s;
+    
+}
+
+
+.card .image .more-details a{
+    color: #fff;
+}
+
+
+.card .image .more-details a:hover{
+    color: var(--btnColorHover);
+}
+
+
+
+.card .card-body{
+    padding: 0 10px;
+
+}
+
+
+.card .card-body h2, h3,h4{
+    margin-bottom: 10px;
+
+}
+
+
+
+.card .card-body .price-and-evaluation{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+
+}
+
+
+.card .card-body .price-and-evaluation .evaluation{
+    color: var(--evaluation);
+
+}
+
+
+.card .card-body .btn-add-to-cart{
+    width: 101%;
+    padding: 20px;
+    color: #fff;
+    background-color: var(--btnColor);
+    font-size: 1.3rem;
+    font-weight: bold;
+    transition:  0.9s;
+    position: absolute;
+    bottom: 0;
+    left: -2px;
+}
+
+
+.card .card-body .btn-add-to-cart i{
+    margin-left: 5px;
+}
+
+
+.card .card-body .btn-add-to-cart:hover{
+    background-color: var(--btnColorHover);
+
+}
+
+
+
+.card .image:hover .more-details{
+    opacity: 1;
+
+}
+
+
+.filter{
+    display: flex;
+    flex-direction: row-reverse;
+    position: fixed;
+    top: 40%;
+    left: 0;
+    z-index: 1000;
+    background-color: var(--btnColor);
+    color: #fff;
+    border-radius: 30px 0;
+    padding: 20px;
+    gap: 40px;
+    width: 70px;
+    font-size: 25px;
+    transition: 0.5s;
+}
+
+
+.filter:hover{
+    width: 250px;
+}
+
+
+
+
+.filter h1{
+    display: flex;
+    flex-direction: column;
+    text-transform: uppercase;
+    font-size: 2.3rem;
+    
+}
+
+
+.filter input{
+    margin-bottom: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

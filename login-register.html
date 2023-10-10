@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login and register</title>
+    <link rel="stylesheet" href="css/login_register.css">
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="css/sh_toaster.css">
+
+</head>
+<body>
+    <div class="sh-toast-container" id="shToastContainerTop"></div>
+
+    <div class="main-logo"><h1>MEGA <i class="fa-brands fa-opencart"></i> STOR</h1></div>
+	<div class="main"> 
+         	
+
+			<div class="signup">
+				<form novalidate>
+					<label for="chk" class="label-sign-up" aria-hidden="true">Sign up</label>
+					<input type="text" class="Username" name="Username" placeholder="User name">
+					<input type="email" class="email-sign-up" name="email" placeholder="Email">
+                    <input type="text" class="phone" name="phone" placeholder="Phone">
+					<input type="password" class="password-sign-up" class="password" name="password" placeholder="Password">
+					<button class="btn-sign-up">Sign up</button>
+				</form>
+			</div>
+
+			<div class="login">
+				<form novalidate>
+					<label for="chk" class="label-login" aria-hidden="true">Login</label>
+					<input type="email" class="email-login" name="email" placeholder="Email">
+					<input type="password" class="password-login" name="password" placeholder="Password">
+					<button class="btn-login">Login</button>
+				</form>
+			</div>
+	</div>
+
+    <script src="js/sh_toaster.js"></script>
+    <script src="js/login_register.js"></script>
+</body>
+</html>
