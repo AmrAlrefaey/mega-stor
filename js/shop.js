@@ -20,7 +20,7 @@ function api() {
     .then(data => {
         showData(data.products)
         mainArray = data.products
-        console.log(data.products)
+        // console.log(data.products)
         // for (let index = 0; index < data.products.length; index++) {
         //     mainArray.push(data.products[index]);
             
@@ -35,8 +35,6 @@ function api() {
 
 api()
 
-
-console.log(mainArray)
 
 
 // action
@@ -69,6 +67,7 @@ const addElement = (new_el) =>{
             cartProducts.push(new_el);
             localStorage.setItem('cartProducts',JSON.stringify(cartProducts));
             viewSuccessCreate("add to cart")
+            totalPriceProducts()
             return cartProducts
             
 }
@@ -80,6 +79,8 @@ const deleteElement = (id) =>{
     localStorage.cartProducts = JSON.stringify(cartProducts)
     showDataInCart(cartProducts)
     viewSuccessCreate("delete")
+    totalPriceProducts()
+
     return  cartProducts;
     
 }
@@ -165,18 +166,40 @@ const addToCart = (id) =>{
         addElement(data)
 
     }else{
-        
-    }
+
+}
 
 
-    
-    
+
     //show data       
     showDataInCart(cartProducts) 
 }
 
 
+
+const getTotal =()=>{
+    var total = 0;
+    cartProducts.forEach(element=>{
+        if(cartProducts.length != 0){
+            total += element.price
+            return total
+        }
+    })
+    return total
+}
+
+
 //view
+
+const totalPrice = document.querySelector(".total");
+
+const totalPriceProducts = ()=>{
+        var total = getTotal()
+        totalPrice.innerHTML=`Total: $ ${total}`
+}
+
+
+
 
 const formFilter = document.querySelector(".form-filter");
 
@@ -325,8 +348,10 @@ contentShopping.addEventListener("click",(e)=>{
 })
 
 const main = () => {
+    totalPriceProducts()
     showDataInCart(cartProducts) 
     showFormFilter()
+
         
 }
 
