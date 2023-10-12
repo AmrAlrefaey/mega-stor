@@ -68,7 +68,9 @@ const addElement = (new_el) =>{
             localStorage.setItem('cartProducts',JSON.stringify(cartProducts));
             viewSuccessCreate("add to cart")
             totalPriceProducts()
+            showCountCart(cartProducts)
             return cartProducts
+
             
 }
 
@@ -80,9 +82,29 @@ const deleteElement = (id) =>{
     showDataInCart(cartProducts)
     viewSuccessCreate("delete")
     totalPriceProducts()
+    showBtnDeleteAll()
+    showCountCart(cartProducts)
 
     return  cartProducts;
     
+}
+
+
+
+
+const delete_All = () =>{
+    localStorage.removeItem('cartProducts')
+
+
+    cartProducts.splice(0);
+
+    showCountCart(cartProducts)
+
+    // while (products_list.length > 0) {
+    //     products_list.pop();
+    // }
+
+    return cartProducts;
 }
 
 
@@ -105,7 +127,6 @@ const searchByTitle = (title) =>{
              data.push(mainArray[i])
             }
         }
-        console.log(data)
     return data
 
 
@@ -166,10 +187,10 @@ const addToCart = (id) =>{
         addElement(data)
 
     }else{
+        viewDangerErrorCreate("You have already selected this item")
+    }
 
-}
-
-
+    showBtnDeleteAll()
 
     //show data       
     showDataInCart(cartProducts) 
@@ -181,7 +202,7 @@ const getTotal =()=>{
     var total = 0;
     cartProducts.forEach(element=>{
         if(cartProducts.length != 0){
-            total += element.price
+            total += (element.price * element.quantity)
             return total
         }
     })
@@ -189,7 +210,75 @@ const getTotal =()=>{
 }
 
 
+
+
+
+
+const modalDescription = document.querySelector(".modalDescription")
+
+const getModal =(id)=>{
+   
+    modalDescription.style.display = "flex"
+
+    let data = findElement(id);
+
+    showModalDescription(data)
+
+}
+
+const closeModal =()=>{
+   
+    modalDescription.style.display = "none"
+
+}
+
+
 //view
+
+
+    
+
+
+const showModalDescription = (obj) =>{
+    var el =`
+    <div class="image">
+        <img src="${obj.img1}" alt="">
+    </div>
+    <div class="details">
+        <h1>${obj.title}</h1>
+
+        <p>${obj.description}</p>
+        <hr>
+        <div class="price-and-evaluation">
+            <h3 class="price-modal">${obj.price} <span>$</span></h3>
+            <div class="evaluation">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+            </div>
+        </div>
+        <hr>
+        <div class="btn-size">
+            <button class="btn-small btn-model">S</button>
+            <button class="btn-medium btn-model">M</button>
+            <button class="btn-large btn-model">L</button>
+            <button class="btn-xlarge btn-model">XL</button>
+        </div>
+
+        <div class="btn-action-modal">
+            <button onClick="addToCart(${obj.id})" class="btn-add-to-cart-modal btn-model">Add To Cart <i class="fa-solid fa-cart-shopping"></i></button>
+            <button onClick="closeModal()" class="btn-close-modal btn-model">Close</button>
+        </div>
+
+    </div>    
+
+    `
+    modalDescription.innerHTML = el;
+}
+
+
 
 const totalPrice = document.querySelector(".total");
 
@@ -228,7 +317,7 @@ const showData = (list) => {
         <div class="image">
         <img src="${element.img1}" alt="">
             <div class="more-details">
-            <a href="https://www.google.com/"><i class="fa-solid fa-circle-info"></i></a>
+            <div onClick="getModal(${element.id})" class="btn-description" ><i class="fa-solid fa-circle-info"></i></div>
             </div>
             </div>
             <div class="card-body">
@@ -245,7 +334,7 @@ const showData = (list) => {
             </div>
             </div>
             <div class="action">
-            <button id="${element.id}" class="btn-add-to-cart"'>Add To Cart</button>
+            <button id="${element.id}" class="btn-add-to-cart">Add To Cart</button>
             </div>
             
             </div>
@@ -254,6 +343,9 @@ const showData = (list) => {
             contentShopping.innerHTML += data ;
         }); 
 }
+
+
+
 
 
 
@@ -266,21 +358,31 @@ const showDataInCart = (list) => {
         let data = `
         <div class="boxContent">
         <div class="description">
-            <img src="${element.img1}" alt="">
-            <div class="desc-text">
-                <div class="title">${element.title}</div>
-                <div class="price">${element.price}</div>
-                <input type="number" class="el-quantity" value=1>
-            </div>
+        <img src="${element.img1}" alt="">
+        <div class="desc-text">
+        <div class="title">${element.title}</div>
+        <div class="price">${element.price}</div>
+        <input type="number" class="el-quantity" value=${element.quantity}>
+        </div>
         </div>
         <button onClick="deleteElement(${element.id})" class="btn-delete"> <i class="fa-solid fa-trash"></i> </button>
-    </div>
+        </div>
         `;
         contentCart.innerHTML += data ;
     }); 
     
 }
-            
+
+
+
+const countCart = document.querySelector(".count-cart");
+
+const showCountCart= (list) => {
+    var count = list.length
+    countCart.innerHTML = count
+}
+
+
 
 //alert
 
@@ -306,12 +408,28 @@ const viewDangerErrorCreate=(mass)=>{
 }
 
 
+const notAddProducts = document.querySelector('.not-add-products')
+
+const showBtnDeleteAll = () =>{
+    if(cartProducts.length != 0){
+        btnDeleteAll.style.display="block"
+        notAddProducts.style.display = "none"
+
+    }else{
+        notAddProducts.style.display = "block"
+        btnDeleteAll.style.display="none"
+
+    }
+}
+
 //view search
 
 const contentSearch =document.querySelector(".content-search")
 const btnSearch = document.querySelector(".btn-search")
 const btnSearchField = document.querySelector(".btn-search-field")
 const inputSearch = document.querySelector(".input-search")
+const btnDeleteAll = document.querySelector(".btn-delete-all")
+const foundSearch = document.querySelector(".foundSearch")
 
 
 btnSearch.addEventListener("click", ()=>{
@@ -345,12 +463,39 @@ contentShopping.addEventListener("click",(e)=>{
         addToCart(target_id)
 
      }
+    
+    
+    //  if(e.target.classList.contains('btn-description')){
+    //     const target_id = e.target.id;
+    
+    //     console.log(target_id);
+
+    //  }
 })
 
+
+modalDescription.addEventListener("click" ,()=>{
+          console.log("target_id");
+
+})
+
+
+
+btnDeleteAll.addEventListener("click", ()=>{
+    delete_All()
+    showBtnDeleteAll()
+    totalPriceProducts()
+    showDataInCart(cartProducts)
+})
+
+
+
 const main = () => {
+    showBtnDeleteAll()
     totalPriceProducts()
     showDataInCart(cartProducts) 
     showFormFilter()
+    showCountCart(cartProducts)
 
         
 }

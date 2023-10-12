@@ -20,10 +20,9 @@
                     <span class="text-logo">MEGA <i class="fa-brands fa-opencart"></i> STOR</span>
                 </div>
             </h1></div>
-            <div class="links">
-                <a href="./index.html">HOME</a>
-                <a href="./shop.html">SHOP</a>
-                <a href="#">CONTACT</a>
+            <div class="links-nav">
+                <a class="home" href="./index.html">HOME</a>
+                <a class="shop active-link" href="./shop.html">SHOP</a>
             </div>
             <div class="user">
                 <div class="info-user">
@@ -35,6 +34,8 @@
                     <i class="fa-solid fa-cart-shopping"></i>
                     <div class="count-cart"> </div>
                 </button>
+                <button class="btn-responsive-nav"><i class="fa-solid fa-bars"></i></button>
+
                 
 
             </div>
@@ -58,13 +59,19 @@
                 </button>
                 <div class="mainCart">
                     <h1>cart</h1>
+
+                    <h3 class="not-add-products">Not Add Products</h3>
                     <div class="content-cart">
                        
                     </div>
                 </div>
-                <h3 class="total">
-                    
-                </h3> 
+                <div class="box">
+                    <h3 class="total">
+    
+                    </h3> 
+                    <button class="btn-delete-all">DELETE All</button>
+                </div>
+                <hr>
                 <div class="btn-buy">
                     <button>BUY NOW</button>
                 </div>
@@ -73,6 +80,43 @@
 
             <div class="title-page">
                 <h1>shopping</h1>
+            </div>
+
+            <hr>
+
+            <div class="modalDescription"> 
+                <div class="image">
+                    <img src="https://uicreative.s3.ap-southeast-1.amazonaws.com/wp-content/uploads/2020/05/22041123/abstract-background-fashion-sale-offer.jpg" alt="">
+                </div>
+                <div class="details">
+                    <h1>title</h1>
+
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Numquam id exercitationem itaque quis modi eligendi?</p>
+                    <hr>
+                    <div class="price-and-evaluation">
+                        <h3 class="price-modal">price <span>$</span></h3>
+                        <div class="evaluation">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="btn-size">
+                        <button class="btn-small btn-model">S</button>
+                        <button class="btn-medium btn-model">M</button>
+                        <button class="btn-large btn-model">L</button>
+                        <button class="btn-xlarge btn-model">XL</button>
+                    </div>
+
+                    <div class="btn-action-modal">
+                        <button class="btn-add-to-cart-modal btn-model">Add To Cart <i class="fa-solid fa-cart-shopping"></i></button>
+                        <button class="btn-close-modal btn-model">Close</button>
+                    </div>
+
+                </div>    
             </div>
 
             <div class="filter">
@@ -92,7 +136,81 @@
     </main>
 
 
-    <footer></footer>
+    <footer>
+        <div class="footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <div class="footer-logo">
+                                <h1>
+                                        <span class="text-logo">MEGA <i class="fa-brands fa-opencart"></i> STOR</span>
+                                </h1>
+                            </div>
+                            <p>A108 Adam Street</p>
+                            <p>New York, NY 535022</p>
+                            <div class="contact">
+                                <p><span>Phone: </span>+1 5589 55488 55</p>
+                                <p><span>Email: </span>info@example.com</p>
+                            </div>
+                        </div>
+                
+                        <div class="col">
+                            <h3>Useful Links</h3>
+                            <ul>
+                                <li>Lorem, ipsum.</li>
+                                <li>Lorem, ipsum.</li>
+                                <li>Lorem, ipsum.</li>
+                                <li>Lorem, ipsum.</li>
+                                <li>Lorem, ipsum.</li>
+                                <li>Lorem, ipsum.</li>
+                            </ul>
+                        </div>
+                
+                        <div class="col">
+                            <h3>Our Services</h3>
+                            <ul>
+                                <li>Lorem, ipsum.</li>
+                                <li>Lorem, ipsum.</li>
+                                <li>Lorem, ipsum.</li>
+                                <li>Lorem, ipsum.</li>
+                                <li>Lorem, ipsum.</li>
+                                <li>Lorem, ipsum.</li>
+                            </ul>
+                        </div>
+                
+                        <div class="col box">
+                            <h3>Our Newsletter</h3>
+                            <p>Tamen quem nulla quae legam multos aute sint culpa <br> legam noster magna</p>
+                            <form>
+                                <input type="text">
+                                <button class="btn">subscriber</button>
+                            </form>
+                            
+                        </div>
+                    </div>
+                    
+                </div>
+
+            </div>
+            <div class="footer-2">
+                <div class="container">
+                    <div class="row">
+                        <div class="col box-1">
+                            <p>© Copyright <span>Mentor.</span>  All Rights Reserved</p>
+                            <p>Designed by <a href="">BootstrapMade</a></p>
+                        </div>
+                        <div class="box-2 col">
+                            <a class="icon"> <i class="fa-brands fa-twitter"></i></a>
+                            <a class="icon"> <i class="fa-brands fa-facebook"></i></a>
+                            <a class="icon"> <i class="fa-brands fa-instagram"></i></a>
+                            <a class="icon"> <i class="fa-brands fa-linkedin"></i></a>
+                            <a class="icon"> <i class="fa-brands fa-skype"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+    </footer>
 
 
     <script src="js/shop.js"></script>
