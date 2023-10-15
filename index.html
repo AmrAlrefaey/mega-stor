@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/sh_toaster.css">
     <link rel="stylesheet" href="./css/index.css">
     <link rel="stylesheet" href="./css/shop.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
@@ -28,8 +29,13 @@
                     <a href="login-register.html" class="login-icon"><i class="fa-solid fa-user"></i></a>
                 </div>
                 <button class="logout-icon"><i class="fa-solid fa-right-from-bracket"></i></button>
+                <button class="btn-cart">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <div class="count-cart"> </div>
+                </button>
                 <button class="btn-responsive-nav"><i class="fa-solid fa-bars"></i></button>
 
+                
 
             </div>
         </div>
@@ -38,6 +44,9 @@
 
 
     <main>
+
+        <div class="sh-toast-container" id="shToastContainerTop"></div>
+
 
         <div class="cart-view">
             <button class="close-cart">
@@ -48,7 +57,7 @@
 
                 <h3 class="not-add-products">Not Add Products</h3>
                 <div class="content-cart">
-                   
+                    
                 </div>
             </div>
             <div class="box">
@@ -59,7 +68,7 @@
             </div>
             <hr>
             <div class="btn-buy">
-                <button>BUY NOW</button>
+                <button class="btn-buy-now">BUY NOW</button>
             </div>
 
         </div>
@@ -285,7 +294,7 @@
 
 
     <script src="./js/index.js"></script>
-    <script src="./js/shop.js"></script>
-    
+    <script src="./js/sh_toaster.js"></script>
+
 </body>
 </html>

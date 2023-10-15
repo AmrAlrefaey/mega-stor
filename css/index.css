@@ -218,15 +218,15 @@ header{
 
 
 .cart-view .close-cart i{
-    font-size: 2.3rem;
+    font-size: 2.2rem;
     cursor: pointer;
-    color: #ffffff;
+    color: var(--btnColorHoverOne);
     
 }
 
 
 .cart-view .close-cart i:hover{
-    color: var(--btnColorHover) ;
+    color: var(--btnColorOne) ;
 }
 
 
@@ -238,6 +238,7 @@ header{
 .cart-view .mainCart h1{
     margin: auto;
     padding-bottom: 20px;
+    font-size: 2rem;
 }
 
 
@@ -278,14 +279,9 @@ header{
   }
 
 
-.cart-view .boxContent img{
-    width: 80px;
-    border-radius: 20px;
-    margin-right: 20px;
-
-}
 
 
+  
 .cart-view .boxContent{
     display: flex;
     justify-content: space-between;
@@ -293,10 +289,21 @@ header{
     margin: 10px 0;
     border: 1px solid rgb(255, 255, 255);
     border-radius: 20px;
-    margin: 20px;
     padding: 10px;
     overflow: hidden;
+    font-size: 20px;
+    
 }
+
+
+
+.cart-view .boxContent img{
+    width: 150px;
+    border-radius: 20px;
+    margin-right: 20px;
+}
+
+
 
 
 
@@ -318,10 +325,43 @@ header{
 
 
 
-.cart-view .boxContent input{
-    width: 50px;
-    height: 30px;
-    font-size: 1rem;
+.cart-view .boxContent .description .desc-text .price{
+    margin-top: 20px;
+}
+
+
+
+.cart-view .boxContent .quantity{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin: 20px;
+}
+
+
+.cart-view .boxContent .quantity{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin: 20px;
+}
+
+
+.cart-view .boxContent .quantity button{
+    font-size: 20px;
+    padding: 10px 12px;
+    border-radius: 50px;
+    background-color: var(--btnColorOne);
+    color: #fff;
+    border: 0px;
+}
+
+
+
+.cart-view .boxContent .quantity button:hover{
+    background-color: var(--btnColorHoverOne);
 }
 
 
@@ -330,10 +370,11 @@ header{
 .cart-view .boxContent .btn-delete{
     color: #fff;
     background-color: red;
-    padding: 10px;
-    font-size: 25px;
-    border-radius: 20%;
+    padding: 10px 15PX;
+    font-size: 35px;
+    border-radius: 50%;
     border: none;
+
 }
 
 
@@ -341,7 +382,7 @@ header{
     display: flex;
     justify-content: space-around;
     align-items: center;  
-    margin-bottom: 50px;
+    margin-bottom: 20px;
     flex-direction: row-reverse;  
 }
 
@@ -350,13 +391,18 @@ header{
 
 .cart-view .box .btn-delete-all{
     padding: 20px 30px;
-    font-size: 25px;
+    font-size: 20px;
     font-weight: bold;
     background-color: red;
     color: #fff;
     border: none;
     border-radius: 10px;
     display: none;
+}
+
+
+.cart-view .box .total h3{
+    font-size: 1rem;
 }
 
 
@@ -369,13 +415,19 @@ header{
 
 .cart-view .btn-buy button{
     width: 90%;
-    background-color: var(--btnBuy);
-    padding: 40px;
+    background-color: var(--btnColorHoverOne);
+    padding: 20px;
     font-size: 2rem;
     font-weight: bold;
     color: #fff;
     border: none;
     border-radius: 20px;
+}
+
+
+
+.cart-view .btn-buy button:hover{
+    background-color: var(--btnColorOne);
 }
 
 

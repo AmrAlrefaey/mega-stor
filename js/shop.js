@@ -1,5 +1,14 @@
+var btnCart = document.querySelector(".btn-cart");
+var viewCart = document.querySelector(".cart-view");
+var closeCart = document.querySelector(".close-cart");
+var logoutIcon = document.querySelector(".logout-icon");
+
+
+
 var mainArray = [];
 var cartProducts=[]
+
+let userStor= JSON.parse(localStorage.getItem("user"));
 
 if(localStorage.getItem('cartProducts') != null){
     cartProducts = JSON.parse(localStorage.getItem('cartProducts'))
@@ -37,6 +46,7 @@ api()
 
 
 
+
 // action
 
 const findElement = (id) =>{
@@ -69,6 +79,10 @@ const addElement = (new_el) =>{
             viewSuccessCreate("add to cart")
             totalPriceProducts()
             showCountCart(cartProducts)
+
+            let total = getTotal(cartProducts)
+            totalPriceProducts(total)
+
             return cartProducts
 
             
@@ -85,6 +99,9 @@ const deleteElement = (id) =>{
     showBtnDeleteAll()
     showCountCart(cartProducts)
 
+    let total = getTotal(cartProducts)
+    totalPriceProducts(total)
+
     return  cartProducts;
     
 }
@@ -99,6 +116,10 @@ const delete_All = () =>{
     cartProducts.splice(0);
 
     showCountCart(cartProducts)
+
+
+    let total = getTotal(cartProducts)
+    totalPriceProducts(total)
 
     // while (products_list.length > 0) {
     //     products_list.pop();
@@ -181,7 +202,7 @@ const addToCart = (id) =>{
     let idElement = id
     
     //find data
-    data = findElement(idElement)
+    var data = findElement(idElement)
 
     if(!findElementInCart(idElement)){
         addElement(data)
@@ -198,16 +219,65 @@ const addToCart = (id) =>{
 
 
 
-const getTotal =()=>{
+const getTotal =(list)=>{
+    const totalPrice = document.querySelector(".total");
     var total = 0;
-    cartProducts.forEach(element=>{
-        if(cartProducts.length != 0){
+    list.forEach(element=>{
+        if(list.length != 0){
             total += (element.price * element.quantity)
+            totalPrice.innerHTML=`Total: $ ${total}`
             return total
+
         }
     })
     return total
 }
+
+
+
+
+const increment =(id)=>{
+    
+    for (let i = 0; i < cartProducts.length; i++) {
+        if(cartProducts[i].id == id){
+            cartProducts[i].quantity++
+            localStorage.setItem('cartProducts', JSON.stringify(cartProducts));
+            showDataInCart(cartProducts)
+
+            let total = getTotal(cartProducts)
+            totalPriceProducts(total)
+
+            
+        }
+    }
+}
+
+
+const decrement =(id)=>{
+    
+    for (let i = 0; i < cartProducts.length; i++) {
+        if(cartProducts[i].id == id){
+            if (cartProducts[i].quantity <= 1) { 
+                cartProducts[i].quantity= 1
+            }else{
+
+                cartProducts[i].quantity--
+            }
+            
+            localStorage.setItem('cartProducts', JSON.stringify(cartProducts));
+            showDataInCart(cartProducts)
+            
+            
+            let total = getTotal(cartProducts)
+            totalPriceProducts(total)
+            
+        }
+    }
+}
+
+
+
+
 
 
 
@@ -282,10 +352,11 @@ const showModalDescription = (obj) =>{
 
 const totalPrice = document.querySelector(".total");
 
-const totalPriceProducts = ()=>{
-        var total = getTotal()
-        totalPrice.innerHTML=`Total: $ ${total}`
+const totalPriceProducts = (total)=>{
+        numTotal = total        
+        totalPrice.innerHTML=`Total: $ ${numTotal}`
 }
+
 
 
 
@@ -360,13 +431,17 @@ const showDataInCart = (list) => {
         <div class="description">
         <img src="${element.img1}" alt="">
         <div class="desc-text">
-        <div class="title">${element.title}</div>
-        <div class="price">${element.price}</div>
-        <input type="number" class="el-quantity" value=${element.quantity}>
+            <div class="title">${element.title}</div>
+            <div class="price">${element.price} $</div>
+            <div class="quantity">
+                <button onClick="increment(${element.id})" class="btn-increment"><i class="fa-solid fa-plus"></i></button>
+                <div class="show-quantity">${element.quantity}</div>
+                <button onClick="decrement(${element.id})" class="btn-decrement"><i class="fa-solid fa-minus"></i></button>
+            </div>
         </div>
         </div>
         <button onClick="deleteElement(${element.id})" class="btn-delete"> <i class="fa-solid fa-trash"></i> </button>
-        </div>
+    </div>
         `;
         contentCart.innerHTML += data ;
     }); 
@@ -422,6 +497,25 @@ const showBtnDeleteAll = () =>{
     }
 }
 
+
+
+
+
+var infoUser= document.querySelector(".info-user")
+var loginIcon= document.querySelector(".login-icon")
+var logoutIcon = document.querySelector(".logout-icon");
+
+const showUser = (userStor)=>{
+    loginIcon.style.display = "none";
+    infoUser.innerHTML=`
+        <div class="info-user">
+                <img src="https://images.freeimages.com/365/images/previews/85b/psd-universal-blue-web-user-icon-53242.jpg" alt="">
+                <h3>${userStor.username}</h3>
+        </div>
+
+    `;
+}
+
 //view search
 
 const contentSearch =document.querySelector(".content-search")
@@ -431,6 +525,9 @@ const inputSearch = document.querySelector(".input-search")
 const btnDeleteAll = document.querySelector(".btn-delete-all")
 const foundSearch = document.querySelector(".foundSearch")
 const btnBuyNow = document.querySelector(".btn-buy-now")
+
+
+
 
 
 
@@ -497,17 +594,47 @@ btnBuyNow.addEventListener("click", ()=>{
         
         location.href= "buyNow.html"
     },1000)
-
+    
 })
 
 
 
 const main = () => {
-    showBtnDeleteAll()
-    totalPriceProducts()
-    showDataInCart(cartProducts) 
-    showFormFilter()
-    showCountCart(cartProducts)
+    
+    
+    if (userStor) {
+        showBtnDeleteAll()
+        showDataInCart(cartProducts) 
+        showFormFilter()
+        showCountCart(cartProducts)
+        
+        let total = getTotal(cartProducts)
+        totalPriceProducts(total)
+
+
+        // cart
+        btnCart.style.display ="block"
+
+        showUser(userStor);
+        // open cart
+        btnCart.addEventListener("click", ()=>{
+            viewCart.style.width= "40%";
+        })
+        
+        // close cart
+        closeCart.addEventListener("click", ()=>{
+            viewCart.style.width= "0%";
+        })
+        
+        
+        logoutIcon.addEventListener("click", ()=>{
+            loginIcon.style.display = "block";
+            localStorage.clear();
+            setTimeout(()=>{
+                window.location.reload()
+            },3000)
+        })
+    }
 
         
 }
