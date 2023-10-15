@@ -430,6 +430,8 @@ const btnSearchField = document.querySelector(".btn-search-field")
 const inputSearch = document.querySelector(".input-search")
 const btnDeleteAll = document.querySelector(".btn-delete-all")
 const foundSearch = document.querySelector(".foundSearch")
+const btnBuyNow = document.querySelector(".btn-buy-now")
+
 
 
 btnSearch.addEventListener("click", ()=>{
@@ -490,6 +492,16 @@ btnDeleteAll.addEventListener("click", ()=>{
 
 
 
+btnBuyNow.addEventListener("click", ()=>{
+    setTimeout(()=>{
+        
+        location.href= "buyNow.html"
+    },1000)
+
+})
+
+
+
 const main = () => {
     showBtnDeleteAll()
     totalPriceProducts()
@@ -499,6 +511,7 @@ const main = () => {
 
         
 }
+
 
 
 main()

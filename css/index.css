@@ -46,6 +46,7 @@ nav{
 
 nav .btn-responsive-nav{
     display: none;
+    transform: rotateY(180deg);
 }
 
 
@@ -63,12 +64,12 @@ nav .main-logo{
 }
 
 
-nav .main-logo .text-logo{
+.main-logo .text-logo{
     color: #fff;
     font-size: 2rem;
 }
 
-nav .main-logo .text-logo i{
+.main-logo .text-logo i{
     color: #b279d9;
     font-size: 2.5rem;
 
@@ -448,6 +449,11 @@ body {
   from {opacity: .4} 
   to {opacity: 1}
 }
+
+
+
+
+
 
 /* On smaller screens, decrease text size */
 @media only screen and (max-width: 300px) {

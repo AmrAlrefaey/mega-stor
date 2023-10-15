@@ -1,0 +1,418 @@
+:root{
+    --btnColor: #2B1651;
+    --btnColorHover:#5b4ef3;
+    --cardShadow:  rgb(169, 167, 167);
+    --borderColorCard:black;
+    --evaluation: rgb(255, 191, 0);
+    --btnBuy: rgb(238, 0, 255);
+    --btnColorOne: #7a449e;
+    --btnColorHoverOne:#c27fef;
+
+    --navColor: #39336e;
+    --shadow : rgb(52 45 69);
+    --scrollColor:#2B1651; 
+
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body{
+    background-color:#837ad5;
+}
+
+main .row{
+    display: flex;
+    justify-content: space-around;
+}
+
+
+
+main .row .col-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    width: 50%;
+    padding: 100px 0;
+    
+
+}
+
+main .row .col-right h1{
+    color: #fff;
+    margin-bottom: 30px;    
+    
+}
+
+
+main .row .col-right form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    
+    
+}
+
+
+
+main .row .col-right .cardForm{
+    background-color:var(--scrollColor);
+    box-shadow: 20px 20px 100px 7px var(--btnColor);
+    margin: 30px 0;
+    border-radius: 40px;
+    width: 800px;
+    margin: auto;
+    height: 1000px;
+    transition: 1s all;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30% 0 30% 0;
+
+}
+
+
+
+main .row .col-right form{
+    width: 70%;
+
+}
+
+main .row .col-right input{
+    font-size: 30px;
+    padding: 10px;
+    outline: none;
+
+}
+
+
+main .row .col-right textarea{
+    width: 100%;
+    font-size: 30px;
+    padding: 10px;
+    height: 212px;
+    outline: none;
+    resize: none;
+}
+
+
+
+main .row .col-right .btn-continue{
+    width: 100%;
+    font-size: 30px;
+    padding: 10px;
+    border: none;
+    background-color: var(--btnColorOne);
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 20px;
+    margin-top: 30px;
+}
+
+
+
+main .row .col-right .btn-continue:hover{
+    background-color: var(--btnColorHoverOne);
+}
+
+
+
+main .row .col-right .cardForm .buySuccess{
+    color: greenyellow;
+    font-size: 4rem;
+
+}
+
+
+
+main .row .col-left{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+
+main .row .col-left .card-logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color:var(--scrollColor);
+    box-shadow: 20px 20px 100px 7px var(--btnColor);
+    padding: 40px 80px;
+    margin: 30px 0;
+    border-radius: 30% 0 30% 0;
+    width: 800px;
+    margin: auto;
+    height: 1000px;
+    transition: 1s all;
+    overflow: hidden;
+}
+
+
+main .row .col-left .visa{
+    display: none;
+    text-align: center;
+}
+
+
+main .row .col-left .visa img{
+    width: 500px ;
+    margin-bottom: 150px;
+}
+
+
+main .row .col-left .visa .cardNumber{
+    width: 90%;
+    font-size: 30px;
+    padding: 10px;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    margin-bottom: 50px;
+}
+
+
+main .row .col-left .visa .cardPassword{
+    width: 90%;
+    font-size: 30px;
+    padding: 10px;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    margin-bottom: 50px;
+}
+
+
+main .row .col-left .visa .btn-buy-completed{
+    width: 90%;
+    font-size: 30px;
+    padding: 10px;
+    border: none;
+    background-color: var(--btnColorOne);
+    color: aliceblue;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 20px;
+    margin-top: 30px;
+}
+
+main .row .col-left .visa .btn-buy-completed:hover{
+    background-color: var(--btnColorHoverOne);
+}
+
+
+
+
+
+
+.col-left .main-logo{
+    width: 550px;
+    height: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    box-shadow: 0px 20px 150px 1px rgb(23, 22, 22);
+    animation: 8s background infinite;
+  
+}
+
+
+
+
+
+
+
+.col-left .main-logo h1{
+    font-size: 4rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 450px;
+    height: 450px;
+    border-radius: 50%;
+    gap: 40px;
+    background-color:var(--scrollColor);    
+
+}
+
+
+
+.col-left .main-logo i{
+    font-size: 5rem;
+    font-weight: bold;
+    animation: 8s logo infinite;
+}
+
+  
+  @keyframes logo {
+    0%   {color:rgb(197, 59, 151);}
+    25%  {color:rgb(157, 29, 166);}
+    50%  {color:rgb(201, 65, 222);}
+    75%  {color:rgb(172, 82, 240);}
+    100% {color:rgb(167, 63, 188);}
+  }
+
+
+  @keyframes background {
+    0%   {background:rgb(197, 59, 151);}
+    25%  {background:rgb(157, 29, 166);}
+    50%  {background:rgb(201, 65, 222);}
+    75%  {background:rgb(172, 82, 240);}
+    100% {background:rgb(167, 63, 188);}
+  }
+
+
+
+  
+main .row .col-left .card-buy{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color:var(--scrollColor);
+    box-shadow: 2px 0px 20px 7px var(--cardShadow);
+    padding: 40px 80px;
+    margin: 30px 0;
+    border-radius: 40px;
+    width: 800px;
+    margin: auto;
+    height: 1000px;
+}
+
+
+
+/* 
+<div class="bill-modal">
+<div class="detailsUser">
+    
+    <h1>name</h1>
+    <h3 class="addressUser"></h3>
+    <h3 class="phoneUser"></h3>
+
+
+</div>
+<hr>
+<h2 class="titleItem">items</h2>
+<ul>
+    <li>title</li>
+</ul>
+</div> */
+
+
+
+.bill-modal{
+    position: fixed;
+    background-color: var(--navColor);
+    width: 1000px;
+    height: 500px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 1000;
+    padding: 20px;
+    border-radius: 15px;
+    color: #fff;
+    box-shadow: 2px 0px 20px 7px var(--btnColor);
+    display: none;
+
+}
+
+
+
+.bill-modal .header-bill{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+
+}
+
+
+.bill-modal hr{
+    border-color: var(--btnColorHoverOne) ;
+    margin: 20px;
+
+}
+
+
+
+.bill-modal .detailsUser{
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+
+}
+
+
+
+
+
+
+.bill-modal  ul{
+    width: 90%;
+    background-color: #4d4689;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    margin: auto;
+    height: 50%;
+    gap: 5px;
+    overflow: auto;
+    padding: 10px;
+}
+
+
+
+
+.bill-modal  li{
+    list-style: none;
+}
+
+
+
+
+.bill-modal .divClose{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;    
+}
+
+
+
+.bill-modal .btn-close-modal-bill{
+    margin-top: 30px ;
+    padding: 10px 20px;
+    font-size: 25px;
+    background-color: var(--btnColor);
+    font-weight: bold;
+    border-radius: 15px;
+    border: none;
+    color: #fff;
+
+
+}
+
+
+
+.bill-modal .btn-close-modal-bill:hover{
+    background-color: var(--btnColorHover);
+}
+
+
+
+
