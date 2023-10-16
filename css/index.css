@@ -245,7 +245,7 @@ header{
 
 .cart-view .content-cart{
     width: 90%;
-    height: 400px;
+    height: 370px;
     padding: 10px;
     overflow-y: scroll;
     margin: auto;
@@ -453,6 +453,7 @@ body {
 .slideshow-container img{
     width: 100vw;
     height: 650px;
+    /* object-fit: contain; */
   }
 
 /* Caption text */
@@ -663,9 +664,18 @@ main .contact_us .content-box .box{
     border-radius: 200px;
     padding: 0 10px;
     margin: 100px 0;
-
+    overflow: hidden;
    
 }
+
+
+
+main .contact_us .content-box .box .info {
+    background-color: inherit;
+   
+}
+
+
 
 
 main .contact_us .content-box i{

@@ -52,12 +52,10 @@ var Model = (()=>{
 
 
     const getTotal =(list)=>{
-        const totalPrice = document.querySelector(".total");
         var total = 0;
         list.forEach(element=>{
             if(list.length != 0){
                 total += (element.price * element.quantity)
-                totalPrice.innerHTML=`Total: $ ${total}`
                 return total
     
             }
@@ -276,6 +274,7 @@ var Controller = (()=>{
     var closeCart = document.querySelector(".close-cart");
     var btnResponsiveNav = document.querySelector(".btn-responsive-nav");
     var linksNav = document.querySelector(".links-nav");
+    const btnBuyNow = document.querySelector(".btn-buy-now")
 
 
 
@@ -371,6 +370,9 @@ var Controller = (()=>{
             }
         })
 
+
+        
+        
         //cart
         btnCart.style.display ="none"
 
@@ -378,7 +380,7 @@ var Controller = (()=>{
         if(user){
             // cart
             btnCart.style.display ="block"
-
+            
             View.showUser(user);
             // open cart
             btnCart.addEventListener("click", ()=>{
@@ -390,6 +392,13 @@ var Controller = (()=>{
                 viewCart.style.width= "0%";
             })
             
+            btnBuyNow.addEventListener("click", ()=>{
+                setTimeout(()=>{
+                    
+                    location.href= "buyNow.html"
+                },1000)
+                
+            })
             
             logoutIcon.addEventListener("click", ()=>{
                 localStorage.clear();

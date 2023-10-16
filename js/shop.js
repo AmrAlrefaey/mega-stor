@@ -588,6 +588,17 @@ btnDeleteAll.addEventListener("click", ()=>{
 })
 
 
+ if(cartProducts.length != 0){
+        btnDeleteAll.style.display="block"
+        notAddProducts.style.display = "none"
+
+}else{
+    notAddProducts.style.display = "block"
+    btnDeleteAll.style.display="none"
+
+}
+
+
 
 btnBuyNow.addEventListener("click", ()=>{
     setTimeout(()=>{

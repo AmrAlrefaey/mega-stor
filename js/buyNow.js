@@ -20,13 +20,27 @@ var Model = (()=>{
     }
 
 
+    const getTotal =(list)=>{
+        var total = 0;
+        list.forEach(element=>{
+            if(list.length != 0){
+                total += (element.price * element.quantity)
+                return total
+    
+            }
+        })
+        return total
+    }
+
+
 
 
 
     return{
         getUser,
         getListUserBill,
-        getCartProducts
+        getCartProducts,
+        getTotal
     };
 
 })();
@@ -51,6 +65,7 @@ var View = (()=>{
     let address =document.querySelector(".address")
     let comments =document.querySelector(".comments")
 
+
     let cardNumber =document.querySelector(".cardNumber")
     let cardPassword =document.querySelector(".cardPassword")
 
@@ -60,6 +75,7 @@ var View = (()=>{
     const addressUser = document.querySelector(".address-user")
     const showItemBill = document.querySelector(".showItemBill")
     const btnCloseModalBill = document.querySelector(".btn-close-modal-bill")
+    const codeBill = document.querySelector(".code-bill")
 
 
     var infoUser= document.querySelector(".info-user")
@@ -213,15 +229,16 @@ var View = (()=>{
 
     const showBill = (listUserBill,cartProducts) =>{
         listUserBill.forEach(element =>{
-            nameUser.innerHTML= element.name
-            phoneUser.innerHTML= element.phone
-            addressUser.innerHTML= element.address
+            nameUser.innerHTML= `Name: ${element.name}`
+            phoneUser.innerHTML= `Phone: ${element.phone}`
+            addressUser.innerHTML= `Address: ${element.address}`
+            codeBill.innerHTML= `Code: ${Math.floor(Math.random() * (100000000 - 1 + 1) + 1)}`
             
         })
     
         cartProducts.forEach(element=>{
             var data =`
-                <li>${element.title}</li>
+                <li>${element.title} (${element.quantity})</li>
             `
             showItemBill.innerHTML += data
         })
@@ -241,6 +258,17 @@ var View = (()=>{
     
         `;
     }
+
+
+    
+const totalPrice = document.querySelector(".totalProducts");
+
+const totalPriceProducts = (total)=>{
+    numTotal = total        
+    totalPrice.innerHTML=`Total: $ ${numTotal}`
+}
+
+
 
 
 
@@ -265,6 +293,7 @@ var View = (()=>{
         cardForm,
         billModal,
         logoutIcon,
+        totalPriceProducts
 
         
 
@@ -281,8 +310,6 @@ var Controller = (()=>{
     let listUserBill = Model.getListUserBill()
 
     let CartProducts =Model.getCartProducts()
-
-    console.log(listUserBill)
 
     View.defaultValue(user)
     
@@ -346,12 +373,27 @@ var Controller = (()=>{
                             View.billModal.style.display = "block";
                             View.showBill(listUserBill,CartProducts)
                         },3000)
+
+                        let CartProducts =Model.getCartProducts()
+
+                        var total = Model.getTotal(CartProducts)
+                        console.log(total)
+                        View.totalPriceProducts(total)
+
                    }
                 
             
             
             
             })
+
+
+
+
+                let cartProducts = Model.getCartProducts() 
+                let total = Model.getTotal(cartProducts)
+                View.totalPriceProducts(total)
+            
             
             
             
@@ -372,6 +414,10 @@ var Controller = (()=>{
                     window.location.reload()
                 },3000)
             })
+       
+       
+
+            
         }
 
 
