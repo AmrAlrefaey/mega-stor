@@ -682,7 +682,7 @@ const main = () => {
             viewCart.style.width= "0%";
         })
         
-        
+        //logout
         logoutIcon.addEventListener("click", ()=>{
             loginIcon.style.display = "block";
             localStorage.clear();
@@ -691,7 +691,7 @@ const main = () => {
             },3000)
         })
     }else{
-        
+
         contentShopping.addEventListener("click",(e)=>{
             if(e.target.classList.contains('btn-add-to-cart')){
                 viewDangerErrorCreate("Please register to activate the addition process")
