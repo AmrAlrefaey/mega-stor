@@ -338,7 +338,7 @@ const showModalDescription = (obj) =>{
         </div>
 
         <div class="btn-action-modal">
-            <button onClick="addToCart(${obj.id})" class="btn-add-to-cart-modal btn-model">Add To Cart <i class="fa-solid fa-cart-shopping"></i></button>
+            <button id="${obj.id}" class="btn-add-to-cart-modal btn-model">Add To Cart <i class="fa-solid fa-cart-shopping"></i></button>
             <button onClick="closeModal()" class="btn-close-modal btn-model">Close</button>
         </div>
 
@@ -557,21 +557,7 @@ inputSearch.addEventListener("keyup", ()=>{
 })
 
 
-// contentShopping.addEventListener("click",(e)=>{
-//     if(e.target.classList.contains('btn-add-to-cart')){
-//         const target_id = e.target.id;
-//         addToCart(target_id)
 
-//      }
-    
-    
-//     //  if(e.target.classList.contains('btn-description')){
-//     //     const target_id = e.target.id;
-    
-//     //     console.log(target_id);
-
-//     //  }
-// })
 
 
 modalDescription.addEventListener("click" ,()=>{
@@ -643,6 +629,17 @@ const main = () => {
     if (userStor) {
 
 
+        modalDescription.addEventListener("click",(e)=>{
+            if(e.target.classList.contains('btn-add-to-cart-modal')){
+                const target_id = e.target.id;
+                addToCart(target_id)
+        
+             }
+            })
+
+
+
+
         contentShopping.addEventListener("click",(e)=>{
             if(e.target.classList.contains('btn-add-to-cart')){
                 const target_id = e.target.id;
@@ -702,6 +699,16 @@ const main = () => {
         
              }
         })
+
+
+        modalDescription.addEventListener("click",(e)=>{
+            if(e.target.classList.contains('btn-add-to-cart-modal')){
+                viewDangerErrorCreate("Please register to activate the addition process")
+                setTimeout(()=>{
+                    window.location.href ="login-register.html"
+                },3000)
+             }
+            })
     }
 
         
