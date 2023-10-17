@@ -557,21 +557,21 @@ inputSearch.addEventListener("keyup", ()=>{
 })
 
 
-contentShopping.addEventListener("click",(e)=>{
-    if(e.target.classList.contains('btn-add-to-cart')){
-        const target_id = e.target.id;
-        addToCart(target_id)
+// contentShopping.addEventListener("click",(e)=>{
+//     if(e.target.classList.contains('btn-add-to-cart')){
+//         const target_id = e.target.id;
+//         addToCart(target_id)
 
-     }
+//      }
     
     
-    //  if(e.target.classList.contains('btn-description')){
-    //     const target_id = e.target.id;
+//     //  if(e.target.classList.contains('btn-description')){
+//     //     const target_id = e.target.id;
     
-    //     console.log(target_id);
+//     //     console.log(target_id);
 
-    //  }
-})
+//     //  }
+// })
 
 
 modalDescription.addEventListener("click" ,()=>{
@@ -636,10 +636,32 @@ btnResponsiveNav.addEventListener("click" , ()=>{
 const main = () => {
     
     
+    showFormFilter()
+
+
+
     if (userStor) {
+
+
+        contentShopping.addEventListener("click",(e)=>{
+            if(e.target.classList.contains('btn-add-to-cart')){
+                const target_id = e.target.id;
+                addToCart(target_id)
+        
+             }
+            
+            
+            //  if(e.target.classList.contains('btn-description')){
+            //     const target_id = e.target.id;
+            
+            //     console.log(target_id);
+        
+            //  }
+        })
+
+
         showBtnDeleteAll()
         showDataInCart(cartProducts) 
-        showFormFilter()
         showCountCart(cartProducts)
         
         let total = getTotal(cartProducts)
@@ -667,6 +689,18 @@ const main = () => {
             setTimeout(()=>{
                 window.location.reload()
             },3000)
+        })
+    }else{
+        
+        contentShopping.addEventListener("click",(e)=>{
+            if(e.target.classList.contains('btn-add-to-cart')){
+                viewDangerErrorCreate("Please register to activate the addition process")
+                setTimeout(()=>{
+                    window.location.href ="login-register.html"
+                },3000)
+
+        
+             }
         })
     }
 
