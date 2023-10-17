@@ -240,7 +240,7 @@ const showBtnDeleteAll = (cartProducts) =>{
 const totalPrice = document.querySelector(".total");
 
 const totalPriceProducts = (total)=>{
-        numTotal = total        
+        numTotal = parseInt(total)        
         totalPrice.innerHTML=`Total: $ ${numTotal}`
 }
 

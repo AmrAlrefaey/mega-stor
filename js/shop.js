@@ -353,7 +353,7 @@ const showModalDescription = (obj) =>{
 const totalPrice = document.querySelector(".total");
 
 const totalPriceProducts = (total)=>{
-        numTotal = total        
+        numTotal = parseInt(total)         
         totalPrice.innerHTML=`Total: $ ${numTotal}`
 }
 
@@ -414,6 +414,7 @@ const showData = (list) => {
             contentShopping.innerHTML += data ;
         }); 
 }
+
 
 
 
@@ -607,6 +608,28 @@ btnBuyNow.addEventListener("click", ()=>{
     },1000)
     
 })
+
+
+
+
+var btnResponsiveNav = document.querySelector(".btn-responsive-nav");
+var linksNav = document.querySelector(".links-nav");
+
+btnResponsiveNav.addEventListener("click" , ()=>{
+    if( linksNav.style.display == "none"){
+        
+        linksNav.style.display = "flex"
+    }else{
+        linksNav.style.display = "none"
+    }
+})
+
+
+
+
+
+
+
 
 
 

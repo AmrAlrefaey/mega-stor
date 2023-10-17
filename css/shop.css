@@ -82,7 +82,7 @@ main .title-page{
 
 main hr{
     
-    margin-bottom: 40px;
+    margin-bottom: 10px;
 }
 
 
@@ -267,13 +267,13 @@ main .content-shopping{
     position: fixed;
     z-index: 900;
     width: 60%;
-    top: 50%; 
+    top: 55%; 
     left: 50%; 
     transform: translate(-50%, -50%);
     overflow: hidden;
     background-color: var(--btnColor);
     display: flex;
-    padding: 150px;
+    padding: 60px;
     color: #fff;
     gap: 30px;
     box-shadow: 5px 20px 80px var(--shadow);
@@ -292,11 +292,11 @@ main .content-shopping{
 }
 
 .modalDescription .image{
-    width: 500px;
+    width: 100%;
 }
 
 .modalDescription .image img{
-    width: 100%;
+    width: 70%;
     border-radius: 20px;
     border: 8px solid var(--btnColorHoverOne);
 }
@@ -309,13 +309,13 @@ main .content-shopping{
 
 
 .modalDescription .details h1{
-    margin-bottom: 50px;
+    margin-bottom: 20px;
 } 
 
 
 .modalDescription .details p{
-    margin: 20px 0;
-    line-height: 40px;
+    margin: 10px 0;
+    line-height: 30px;
 }
 
 
@@ -324,7 +324,7 @@ main .content-shopping{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 30px 0;
+    margin: 10px 0;
 
 }
 
@@ -346,15 +346,15 @@ main .content-shopping{
 .modalDescription .details .btn-size{
     display: flex;
     gap: 20px;
-    margin: 20px 0;
+    margin: 10px 0;
 }
 
 .modalDescription .details .btn-size button{
     padding: 10px;
-    font-size: 30px;
+    font-size: 17px;
     border-radius: 50%;
-    width: 80px;
-    height: 80px;
+    width: 45px;
+    height: 45px;
     background-color: var(--btnColorHoverOne);
     border: none;
     color: #fff;
@@ -367,14 +367,14 @@ main .content-shopping{
    display: flex;
    justify-content: end;
    gap: 10px;
-   margin-top: 70px;
+   margin-top: 50px;
 
 }
 
 
 .modalDescription .btn-action-modal button{
     padding: 10px 50px;
-    font-size: 30px;
+    font-size: 20px;
     border-radius: 20px;
     background-color: var(--btnColorHoverOne);
     border: none;
@@ -394,3 +394,573 @@ main .content-shopping{
 
 
 
+
+@media(max-width: 1300px) {
+
+    .content-shopping {
+        padding: 50px 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+        
+    }
+
+
+    .card {
+        width: 46%;
+        height: 560px;
+        border: 5px solid var(--btnColor);
+        overflow: hidden;
+        position: relative;
+        transition: 0.5s;
+        margin: auto;
+    }
+
+
+    
+.modalDescription{
+    width: 70%;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+
+
+
+.modalDescription .details .btn-model:hover{
+    background-color: var(--btnColorOne);
+}
+
+
+.modalDescription .details{
+    width: 60%;
+    font-size: 1.3rem;
+}
+
+
+
+
+.modalDescription .image{
+    width: 60%;
+}
+
+.modalDescription .image img{
+    width: 100%;
+    border-radius: 20px;
+    border: 8px solid var(--btnColorHoverOne);
+}
+
+
+
+
+.modalDescription .details{
+    width: 100%;
+}
+
+
+
+
+
+.modalDescription .details .price-and-evaluation{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 30px;
+}
+
+
+
+
+
+
+.modalDescription .details .price-and-evaluation .price-modal span{
+    color: var(--btnColorHoverOne);
+    font-size: 1.5rem;
+
+}
+
+.modalDescription .details .btn-size{
+    display: flex;
+    gap: 20px;
+    margin: 20px 0;
+    justify-content: center;
+}
+
+.modalDescription .details .btn-size button{
+    padding: 10px;
+    font-size: 30px;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    background-color: var(--btnColorHoverOne);
+    border: none;
+    color: #fff;
+    font-weight: bold;
+}
+
+
+
+.modalDescription .btn-action-modal {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: 10px;
+   margin-top: 70px;
+
+}
+
+
+.modalDescription .btn-action-modal button{
+    padding: 20px 50px;
+    font-size: 30px;
+    border-radius: 20px;
+    background-color: var(--btnColorHoverOne);
+    border: none;
+    color: #fff;
+    font-weight: bold;
+    width: 300px;
+    height: 150px;
+    
+}
+
+
+
+
+
+}
+
+
+
+
+
+@media(max-width: 900px) {
+
+
+    .card {
+        width: 80%;
+        height: 530px;
+        border: 5px solid var(--btnColor);
+        overflow: hidden;
+        position: relative;
+        transition: 0.5s;
+        margin: auto;
+    }
+
+
+    .modalDescription{
+        width: 70%;
+        height: 85%;
+        top: 55%;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+    
+
+
+
+    /* width */
+    ::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    
+    
+    
+    .modalDescription .details{
+        width: 100%;
+        font-size: 0.8rem;
+        overflow: auto;
+
+    }
+    
+    
+    
+    
+    .modalDescription .image{
+        width: 200px;
+        
+    }
+    
+    .modalDescription .image img{
+        width: 100%;
+        border-radius: 20px;
+        border: 8px solid var(--btnColorHoverOne);
+        
+    }
+    
+    
+    
+    .modalDescription .details .price-and-evaluation{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    
+    
+    
+    
+    
+    .modalDescription .details .price-and-evaluation .price-modal span{
+        color: var(--btnColorHoverOne);
+        font-size: 1.5rem;
+    
+    }
+    
+    .modalDescription .details .btn-size{
+        display: flex;
+        gap: 20px;
+        margin: 20px 0;
+        justify-content: center;
+    }
+    
+    .modalDescription .details .btn-size button{
+        padding: 20px;
+        font-size: 20px;
+        border-radius: 50%;
+        width: 80px;
+        height: 80px;
+        background-color: var(--btnColorHoverOne);
+        border: none;
+        color: #fff;
+        font-weight: bold;
+    }
+    
+    
+    
+    .modalDescription .btn-action-modal {
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       flex-direction: column;
+       gap: 10px;
+       margin-top: 70px;
+    
+    }
+    
+    
+    .modalDescription .btn-action-modal button{
+        padding: 5px 20px;
+        font-size: 30px;
+        border-radius: 20px;
+        background-color: var(--btnColorHoverOne);
+        border: none;
+        color: #fff;
+        font-weight: bold;
+        width: 200px;
+        height: 100px;
+        
+    }
+}
+
+
+
+
+
+@media(max-width: 660px) {
+
+
+    .card {
+        width: 80%;
+        height: 530px;
+        border: 5px solid var(--btnColor);
+        overflow: hidden;
+        position: relative;
+        transition: 0.5s;
+        margin: auto;
+    }
+
+
+    .modalDescription{
+        width: 70%;
+        height: 85%;
+        top: 55%;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+    
+
+
+
+    /* width */
+    ::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    
+    
+    
+    .modalDescription .details{
+        width: 100%;
+        font-size: 0.8rem;
+        overflow: auto;
+
+    }
+    
+    
+    
+    
+    .modalDescription .image{
+        width: 100px;
+        
+    }
+    
+    .modalDescription .image img{
+        width: 100%;
+        border-radius: 20px;
+        border: 8px solid var(--btnColorHoverOne);
+        
+    }
+    
+    
+    
+    .modalDescription .details .price-and-evaluation{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    
+    
+    
+    
+    
+    .modalDescription .details .price-and-evaluation .price-modal span{
+        color: var(--btnColorHoverOne);
+        font-size: 1.5rem;
+    
+    }
+    
+    .modalDescription .details .btn-size{
+        display: flex;
+        gap: 20px;
+        margin: 20px 0;
+        justify-content: center;
+    }
+    
+    .modalDescription .details .btn-size button{
+        padding: 20px;
+        font-size: 20px;
+        border-radius: 50%;
+        width: 80px;
+        height: 80px;
+        background-color: var(--btnColorHoverOne);
+        border: none;
+        color: #fff;
+        font-weight: bold;
+    }
+    
+    
+    
+    .modalDescription .btn-action-modal {
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       flex-direction: column;
+       gap: 10px;
+       margin-top: 70px;
+    
+    }
+    
+    
+    .modalDescription .btn-action-modal button{
+        padding: 5px 20px;
+        font-size: 30px;
+        border-radius: 20px;
+        background-color: var(--btnColorHoverOne);
+        border: none;
+        color: #fff;
+        font-weight: bold;
+        width: 200px;
+        height: 100px;
+        
+    }
+}
+
+
+
+
+
+@media(max-width: 500px) {
+
+
+
+
+
+
+    .modalDescription{
+        width: 60%;
+        height: 70%;
+        top: 55%;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+    
+
+
+
+    /* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+
+    
+    
+    
+    .modalDescription .details{
+        width: 100%;
+        font-size: 0.8rem;
+        overflow: auto;
+
+    }
+    
+    
+    
+    
+    .modalDescription .image{
+        width: 100px;
+        
+    }
+    
+    .modalDescription .image img{
+        width: 100%;
+        border-radius: 20px;
+        border: 8px solid var(--btnColorHoverOne);
+        
+    }
+    
+    
+    
+    
+    
+    
+    .modalDescription .details .price-and-evaluation{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    
+
+
+    .modalDescription .details h1 {
+        margin-bottom: 10px;
+        font-size: 1rem;
+    }
+    
+    
+    
+    
+    .modalDescription .details .price-and-evaluation .price-modal span{
+        color: var(--btnColorHoverOne);
+        font-size: 1rem;
+    
+    }
+
+
+
+    .modalDescription .details .price-and-evaluation .price-modal {
+        margin: 5px 0;
+    
+    }
+    
+    .modalDescription .details .btn-size{
+        display: flex;
+        gap: 5px;
+        margin: 20px 0;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .modalDescription .details .btn-size button{
+        padding: 10px;
+        font-size: 10px;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        background-color: var(--btnColorHoverOne);
+        border: none;
+        color: #fff;
+        font-weight: bold;
+    }
+    
+    
+    
+    .modalDescription .btn-action-modal {
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       flex-direction: column;
+       gap: 10px;
+       margin-top: 70px;
+    
+    }
+    
+    
+    .modalDescription .btn-action-modal button{
+        padding: 10px 20px;
+        font-size: 10px;
+        border-radius: 20px;
+        background-color: var(--btnColorHoverOne);
+        border: none;
+        color: #fff;
+        font-weight: bold;
+        width: 60px;
+        height: 60px
+    
+        
+    }
+
+
+
+    .filter{
+        display: flex;
+        flex-direction: row-reverse;
+        position: fixed;
+        top: 40%;
+        left: 0;
+        z-index: 1000;
+        background-color: var(--btnColor);
+        color: #fff;
+        border-radius: 30px 0;
+        padding: 20px;
+        gap: 40px;
+        width: 70px;
+        font-size: 15px;
+        transition: 0.5s;
+        align-items: center;
+        height: 250px;
+    }
+    
+    
+    .filter:hover{
+        width: 200px;
+    }
+    
+    
+    
+    
+    
+    .filter h1{
+        display: flex;
+        flex-direction: column;
+        text-transform: uppercase;
+        font-size: 1.3rem;
+        
+    }
+    
+    
+    .filter input{
+        margin-bottom: 30px;
+    }
+    
+}

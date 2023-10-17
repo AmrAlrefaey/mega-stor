@@ -47,6 +47,10 @@ var Model = (()=>{
 
 
 var View = (()=>{
+
+    const btnResponsiveNav = document.querySelector(".btn-responsive-nav");
+    const linksNav = document.querySelector(".links-nav");
+
     const btnContinue =document.querySelector(".btn-continue")
     const btnCompleted =document.querySelector(".btn-buy-completed")
 
@@ -264,7 +268,7 @@ var View = (()=>{
 const totalPrice = document.querySelector(".totalProducts");
 
 const totalPriceProducts = (total)=>{
-    numTotal = total        
+    numTotal = parseInt(total)        
     totalPrice.innerHTML=`Total: $ ${numTotal}`
 }
 
@@ -293,7 +297,9 @@ const totalPriceProducts = (total)=>{
         cardForm,
         billModal,
         logoutIcon,
-        totalPriceProducts
+        totalPriceProducts,
+        btnResponsiveNav,
+        linksNav
 
         
 
@@ -315,6 +321,16 @@ var Controller = (()=>{
     
     
     var inti=()=>{
+
+       View.btnResponsiveNav.addEventListener("click" , ()=>{
+            if( View.linksNav.style.display == "none"){
+                
+                View.linksNav.style.display = "flex"
+            }else{
+                View.linksNav.style.display = "none"
+            }
+        })
+
         
 
         if (user) {
