@@ -384,7 +384,7 @@ var Controller = (()=>{
             View.showUser(user);
             // open cart
             btnCart.addEventListener("click", ()=>{
-                viewCart.style.width= "40%";
+                viewCart.style.width= "70%";
             })
             
             // close cart

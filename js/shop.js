@@ -671,7 +671,7 @@ const main = () => {
         showUser(userStor);
         // open cart
         btnCart.addEventListener("click", ()=>{
-            viewCart.style.width= "40%";
+            viewCart.style.width= "70%";
         })
         
         // close cart

@@ -423,7 +423,6 @@ main .row .col-left .card-buy{
 
 
 
-
 @media(max-width: 1300px) {
 
 
@@ -444,7 +443,7 @@ main .row .col-left .card-buy{
     
     
     main .row .col-right h1 {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
     }
     
 
@@ -475,7 +474,7 @@ main .row .col-left .card-buy{
     
     
     main .row .col-left .visa img{
-        width: 400px;
+        width: 380px;
     }
     
     
@@ -498,8 +497,8 @@ main .row .col-left .card-buy{
     
     
     .col-left .main-logo{
-        width: 350px;
-        height: 269px;
+        width: 380px;
+        height: 290px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -522,8 +521,8 @@ main .row .col-left .card-buy{
         align-items: center;
         justify-content: center;
         flex-direction: column;
-        width: 270px;
-        height: 270px;
+        width: 290px;
+        height: 290px;
         border-radius: 50%;
         gap: 40px;
         background-color:var(--scrollColor);    
@@ -533,7 +532,7 @@ main .row .col-left .card-buy{
     
     
     .col-left .main-logo i{
-        font-size: 5rem;
+        font-size: 3rem;
         font-weight: bold;
         animation: 8s logo infinite;
     }
@@ -572,26 +571,16 @@ main .row .col-left .card-buy{
         margin: auto;
         height: 1000px;
     }
+
+
+    main .row .col-right .cardForm .buySuccess{
+        color: greenyellow;
+        font-size: 3rem;
     
+    }
     
-    
-    /* 
-    <div class="bill-modal">
-    <div class="detailsUser">
-        
-        <h1>name</h1>
-        <h3 class="addressUser"></h3>
-        <h3 class="phoneUser"></h3>
-    
-    
-    </div>
-    <hr>
-    <h2 class="titleItem">items</h2>
-    <ul>
-        <li>title</li>
-    </ul>
-    </div> */
-    
+
+
     
     
     .bill-modal{
@@ -600,4 +589,191 @@ main .row .col-left .card-buy{
     
     }
 
+
+
+    .bill-modal .detailsUser{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    
+    }
+}
+
+
+@media(max-width: 550px) {
+
+
+    main .row{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column-reverse;
+    }
+    
+    
+    
+    main .row .col-right {
+        width: 100%;
+    }
+
+    
+    
+    
+    main .row .col-right h1 {
+        font-size: 1rem;
+    }
+    
+
+
+
+    
+    main .row .col-right .cardForm{
+
+        width: 80%;
+    
+    }
+    
+    
+    
+    
+    main .row .col-left{
+        width: 100%;
+
+    }
+    
+    
+    
+    main .row .col-left .card-logo{
+        width: 80%;
+        margin-bottom: 100px;
+    }
+    
+    
+    
+    main .row .col-left .visa img{
+        width: 280px;
+    }
+    
+    
+    main .row .col-left .visa .cardNumber{
+        width: 80%;
+    }
+    
+    
+    main .row .col-left .visa .cardPassword{
+        width: 80%;
+    }
+    
+    
+    main .row .col-left .visa .btn-buy-completed{
+        width: 80%;
+    }
+    
+    
+    
+    
+    
+    .col-left .main-logo{
+        width: 250px;
+        height: 190px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        box-shadow: 0px 20px 150px 1px rgb(23, 22, 22);
+        animation: 8s background infinite;
+      
+    }
+    
+    
+    
+    
+    
+    
+    
+    .col-left .main-logo h1{
+        font-size: 1rem;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        width: 190px;
+        height: 190px;
+        border-radius: 50%;
+        gap: 40px;
+        background-color:var(--scrollColor);    
+    
+    }
+    
+    
+    
+    .col-left .main-logo i{
+        font-size: 3rem;
+        font-weight: bold;
+        animation: 8s logo infinite;
+    }
+    
+      
+      @keyframes logo {
+        0%   {color:rgb(197, 59, 151);}
+        25%  {color:rgb(157, 29, 166);}
+        50%  {color:rgb(201, 65, 222);}
+        75%  {color:rgb(172, 82, 240);}
+        100% {color:rgb(167, 63, 188);}
+      }
+    
+    
+      @keyframes background {
+        0%   {background:rgb(197, 59, 151);}
+        25%  {background:rgb(157, 29, 166);}
+        50%  {background:rgb(201, 65, 222);}
+        75%  {background:rgb(172, 82, 240);}
+        100% {background:rgb(167, 63, 188);}
+      }
+    
+    
+    
+      
+    main .row .col-left .card-buy{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color:var(--scrollColor);
+        box-shadow: 2px 0px 20px 7px var(--cardShadow);
+        padding: 40px 80px;
+        margin: 30px 0;
+        border-radius: 40px;
+        width: 800px;
+        margin: auto;
+        height: 1000px;
+    }
+
+
+    main .row .col-right .cardForm .buySuccess{
+        color: greenyellow;
+        font-size: 3rem;
+    
+    }
+    
+
+
+    
+    
+    .bill-modal{
+        width: 85%;
+        height: auto;
+    
+    }
+
+
+
+    .bill-modal .detailsUser{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    
+    }
 }
