@@ -1917,6 +1917,16 @@ main .contact_us .content-box .box{
 
     @media(max-width: 500px) {
 
+
+        .slideshow-container img{
+            width: 100vw;
+            height: 350px;
+            /* object-fit: contain; */
+          }
+
+
+
+
         main .offer{
             display: flex;
             gap: 1px;
@@ -1924,8 +1934,14 @@ main .contact_us .content-box .box{
             align-items: center;
             flex-direction: column;
         }
+    
         
         
+        main .offer .card-offer{
+            width: 1000px;
+            height: 600px;
+            margin: 0px;
+        }
         
         
         main .offer .card-offer{
@@ -1941,7 +1957,6 @@ main .contact_us .content-box .box{
             border-radius: 30% 0 30% 0;
             border: 20px solid #fff;
             cursor: pointer;
-        }
-        
+        }        
         
         }
