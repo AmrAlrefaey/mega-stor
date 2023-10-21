@@ -273,33 +273,3 @@ var Controller = (()=>{
 Controller.init()
 
 
-
-const dummyData = [
-  {
-    id: 1,
-    name: "productName",
-    price: 3000,
-    // ...etc
-  },
-];
-
-export function getData() {
-    return new Promise((resolve) => {
-      setTimeout(() => {
-        resolve(dummyData); // Simulate an asynchronous operation, replace with your actual data retrieval logic
-      }, 1000); // You can adjust the delay as needed
-    });
-  }
-  
-
-
-  async function fetchData() {
-    try {
-      const data = await getData();
-      console.log(data);
-    } catch (error) {
-      console.error("An error occurred:", error);
-    }
-  }
-  
-  fetchData();
