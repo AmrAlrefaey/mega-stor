@@ -25,10 +25,11 @@ var Model = (()=>{
 
 
     const deleteElement = (id) =>{
-        cartProducts = cartProducts.filter(element => element.id != id); 
-        localStorage.cartProducts = JSON.stringify(cartProducts)
-    
-        return  cartProducts;
+
+            cartProducts = cartProducts.filter(element => element.id != id); 
+            localStorage.cartProducts = JSON.stringify(cartProducts)
+            return  cartProducts;
+        
         
     }
     
@@ -36,15 +37,16 @@ var Model = (()=>{
     
     
     const delete_All = () =>{
-        localStorage.removeItem('cartProducts')
-    
-    
-        cartProducts.splice(0);    
-        // while (products_list.length > 0) {
-        //     products_list.pop();
-        // }
-    
-        return cartProducts;
+
+            localStorage.removeItem('cartProducts')
+        
+        
+            cartProducts.splice(0);    
+            // while (products_list.length > 0) {
+            //     products_list.pop();
+            // }
+        
+            return cartProducts;
     }
     
 
@@ -296,67 +298,6 @@ var Controller = (()=>{
 
 
 
-        View.contentCart.addEventListener("click" , (e)=>{
-            if(e.target.classList.contains('btn-delete')){
-                const target_id = e.target.id;
-                let data = Model.deleteElement(target_id)
-                View.showDataInCart(data)
-                View.showCountCart(data)
-                View.viewSuccessCreate("Delete")
-
-                let cartProducts = Model.getCartProducts() 
-                
-                View.showCountCart(cartProducts)
-                View.showBtnDeleteAll(cartProducts)
-
-             }
-
-
-
-            if(e.target.classList.contains('btn-increment')){
-                const target_id = e.target.id;
-                console.log(target_id)
-                Model.increment(target_id)
-                let cartProducts = Model.getCartProducts() 
-                View.showDataInCart(cartProducts)
-                let total = Model.getTotal(cartProducts)
-                View.totalPriceProducts(total)
-             }
-
-
-
-             if(e.target.classList.contains('btn-decrement')){
-                const target_id = e.target.id;
-                console.log(target_id)
-                Model.decrement(target_id)
-                let cartProducts = Model.getCartProducts() 
-                View.showDataInCart(cartProducts)
-                let total = Model.getTotal(cartProducts)
-                View.totalPriceProducts(total)
-             }
-
-
-        })
-       
-       
-       
-        View.btnDeleteAll.addEventListener("click" , ()=>{
-                let data = Model.delete_All()
-
-                View.showDataInCart(data)
-                View.showCountCart(data)
-                View.viewSuccessCreate("Delete All")
-            
-                
-                let cartProducts = Model.getCartProducts() 
-
-                View.showCountCart(cartProducts)
-                View.showBtnDeleteAll(cartProducts)
-
-
-             
-        })
-
 
         getCartProducts = Model.getCartProducts()
 
@@ -378,6 +319,84 @@ var Controller = (()=>{
 
         //show user
         if(user){
+
+
+            View.contentCart.addEventListener("click" , (e)=>{
+                if(e.target.classList.contains('btn-delete')){
+                    const target_id = e.target.id;
+                    var alert = confirm('are you sour deleted')
+                    if (alert) {
+                        let data = Model.deleteElement(target_id)
+                        View.showDataInCart(data)
+                        View.showCountCart(data)
+                        View.viewSuccessCreate("Delete")
+                    }
+    
+                    let cartProducts = Model.getCartProducts() 
+                    
+                    View.showCountCart(cartProducts)
+                    View.showBtnDeleteAll(cartProducts)
+                    View.showDataInCart(cartProducts)
+
+                                        
+                    let total = Model.getTotal(cartProducts)
+                    View.totalPriceProducts(total)
+                
+    
+                 }
+    
+    
+    
+                if(e.target.classList.contains('btn-increment')){
+                    const target_id = e.target.id;
+                    console.log(target_id)
+                    Model.increment(target_id)
+                    let cartProducts = Model.getCartProducts() 
+                    View.showDataInCart(cartProducts)
+                    let total = Model.getTotal(cartProducts)
+                    View.totalPriceProducts(total)
+                 }
+    
+    
+    
+                 if(e.target.classList.contains('btn-decrement')){
+                    const target_id = e.target.id;
+                    console.log(target_id)
+                    Model.decrement(target_id)
+                    let cartProducts = Model.getCartProducts() 
+                    View.showDataInCart(cartProducts)
+                    let total = Model.getTotal(cartProducts)
+                    View.totalPriceProducts(total)
+                 }
+    
+    
+            })
+           
+           
+           
+            View.btnDeleteAll.addEventListener("click" , ()=>{
+                var alert = confirm('are you sour deleted')
+                if (alert) {
+                    let data = Model.delete_All()
+                    View.showDataInCart(data)
+                    View.showCountCart(data)
+                    View.viewSuccessCreate("Delete All")
+                }
+                    
+                    let cartProducts = Model.getCartProducts() 
+    
+                    View.showCountCart(cartProducts)
+                    View.showBtnDeleteAll(cartProducts)
+
+                    let total = Model.getTotal(cartProducts)
+                    View.totalPriceProducts(total)
+    
+    
+                 
+            })
+
+
+
             // cart
             btnCart.style.display ="block"
             

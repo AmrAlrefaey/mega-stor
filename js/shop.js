@@ -91,18 +91,21 @@ const addElement = (new_el) =>{
 
 
 const deleteElement = (id) =>{
-    cartProducts = cartProducts.filter(element => element.id != id); 
-    localStorage.cartProducts = JSON.stringify(cartProducts)
-    showDataInCart(cartProducts)
-    viewSuccessCreate("delete")
-    totalPriceProducts()
-    showBtnDeleteAll()
-    showCountCart(cartProducts)
-
-    let total = getTotal(cartProducts)
-    totalPriceProducts(total)
-
-    return  cartProducts;
+    var alert = confirm('are you sour deleted')
+    if (alert) {
+        cartProducts = cartProducts.filter(element => element.id != id); 
+        localStorage.cartProducts = JSON.stringify(cartProducts)
+        showDataInCart(cartProducts)
+        viewSuccessCreate("delete")
+        totalPriceProducts()
+        showBtnDeleteAll()
+        showCountCart(cartProducts)
+    
+        let total = getTotal(cartProducts)
+        totalPriceProducts(total)
+    
+        return  cartProducts;       
+    }
     
 }
 
@@ -110,22 +113,25 @@ const deleteElement = (id) =>{
 
 
 const delete_All = () =>{
-    localStorage.removeItem('cartProducts')
+    var alert = confirm('are you sour deleted')
+    if (alert) {
+        localStorage.removeItem('cartProducts')
 
 
-    cartProducts.splice(0);
+        cartProducts.splice(0);
 
-    showCountCart(cartProducts)
+        showCountCart(cartProducts)
 
 
-    let total = getTotal(cartProducts)
-    totalPriceProducts(total)
+        let total = getTotal(cartProducts)
+        totalPriceProducts(total)
 
-    // while (products_list.length > 0) {
-    //     products_list.pop();
-    // }
+        // while (products_list.length > 0) {
+        //     products_list.pop();
+        // }
 
-    return cartProducts;
+        return cartProducts;
+    }
 }
 
 
@@ -570,7 +576,6 @@ modalDescription.addEventListener("click" ,()=>{
 btnDeleteAll.addEventListener("click", ()=>{
     delete_All()
     showBtnDeleteAll()
-    totalPriceProducts()
     showDataInCart(cartProducts)
 })
 
