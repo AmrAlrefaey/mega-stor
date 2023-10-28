@@ -388,14 +388,23 @@ const formFilter = document.querySelector(".form-filter");
 
 const showFormFilter =()=>{
     formFilter.innerHTML = `
-    <input type="radio" onclick="filterAllItem()" id="all" name="filter" value="furniture">
-    <label for="furniture">all</label><br>
-    <input type="radio" onclick="filterElectronic()" id="electronic" name="filter" value="electronic">
-    <label for="electronic">electronic</label><br>
-    <input type="radio" onclick="filterClothes()" id="clothes" name="filter" value="clothes">
-    <label for="clothes"> clothes</label><br>
-    <input type="radio" onclick="filterFurniture()" id="furniture" name="filter" value="furniture">
-    <label for="furniture"> furniture</label><br>
+    <div class="checkFilterContainer" >
+        <input class="checkFilter" type="radio" onclick="filterAllItem()" id="all" name="filter" value="furniture">
+        <label for="furniture">all</label><br>
+    </div>
+
+    <div class="checkFilterContainer" >
+        <input class="checkFilter" type="radio" onclick="filterElectronic()" id="electronic" name="filter" value="electronic">
+        <label for="electronic">electronic</label><br>
+    </div>
+    <div class="checkFilterContainer" >
+        <input class="checkFilter" type="radio" onclick="filterClothes()" id="clothes" name="filter" value="clothes">
+        <label for="clothes"> clothes</label><br>
+    </div>
+    <div class="checkFilterContainer" >
+        <input class="checkFilter" type="radio" onclick="filterFurniture()" id="furniture" name="filter" value="furniture">
+        <label for="furniture"> furniture</label><br>
+    </div>
     `
 }
 
