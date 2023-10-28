@@ -76,7 +76,9 @@ var View = (()=>{
 
     const nameUser = document.querySelector(".name-user")
     const phoneUser = document.querySelector(".phone-user")
+    const anotherPhoneUser = document.querySelector(".another-phone-user")
     const addressUser = document.querySelector(".address-user")
+    const commentsUser = document.querySelector(".comments-user")
     const showItemBill = document.querySelector(".showItemBill")
     const btnCloseModalBill = document.querySelector(".btn-close-modal-bill")
     const codeBill = document.querySelector(".code-bill")
@@ -144,7 +146,7 @@ var View = (()=>{
             var data = {
                 name: nameForm.value,
                 phone: phoneForm.value,
-                anotherPhone: anotherPhone.value,
+                anotherPhoneUser: anotherPhone.value,
                 address: address.value,
                 comments: comments.value,
         
@@ -235,7 +237,9 @@ var View = (()=>{
         listUserBill.forEach(element =>{
             nameUser.innerHTML= `Name: ${element.name}`
             phoneUser.innerHTML= `Phone: ${element.phone}`
+            anotherPhoneUser.innerHTML= `Another Phone: ${element.anotherPhoneUser}`
             addressUser.innerHTML= `Address: ${element.address}`
+            commentsUser.innerHTML= `Comments: ${element.comments}`
             codeBill.innerHTML= `Code: ${Math.floor(Math.random() * (100000000 - 1 + 1) + 1)}`
             
         })

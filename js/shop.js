@@ -639,23 +639,23 @@ const main = () => {
     showFormFilter()
 
 
-
+    
     if (userStor) {
+        
         
         if(cartProducts.length > 0){
             btnBuyNow.addEventListener("click", ()=>{
                 setTimeout(()=>{
-                    
+                    console.log("buy now")
                     location.href= "buyNow.html"
                 },1000)
                 
             })
             btnBuyNow.style.display = "inline-block"
-
+    
         }else{
             btnBuyNow.style.display = "none"
         }
-
 
         modalDescription.addEventListener("click",(e)=>{
             if(e.target.classList.contains('btn-add-to-cart-modal')){
