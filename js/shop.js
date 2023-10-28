@@ -132,6 +132,7 @@ const delete_All = () =>{
 
         showCountCart(cartProducts)
 
+        viewSuccessCreate("Delete All")
 
         let total = getTotal(cartProducts)
         totalPriceProducts(total)
