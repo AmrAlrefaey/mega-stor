@@ -36,10 +36,14 @@ function api() {
         // }   
         
         // showData(mainArray)
+        console.log(mainArray)
         
         
     })
 }
+
+console.log(mainArray)
+
 
 
 api()
@@ -103,6 +107,12 @@ const deleteElement = (id) =>{
     
         let total = getTotal(cartProducts)
         totalPriceProducts(total)
+
+        if(cartProducts.length > 0){
+            btnBuyNow.style.display = "inline-block"
+        }else{
+            btnBuyNow.style.display = "none"
+        }
     
         return  cartProducts;       
     }
@@ -129,6 +139,12 @@ const delete_All = () =>{
         // while (products_list.length > 0) {
         //     products_list.pop();
         // }
+
+        if(cartProducts.length > 0){
+            btnBuyNow.style.display = "inline-block"
+        }else{
+            btnBuyNow.style.display = "none"
+        }
 
         return cartProducts;
     }
@@ -592,14 +608,6 @@ btnDeleteAll.addEventListener("click", ()=>{
 
 
 
-btnBuyNow.addEventListener("click", ()=>{
-    setTimeout(()=>{
-        
-        location.href= "buyNow.html"
-    },1000)
-    
-})
-
 
 
 
@@ -632,12 +640,29 @@ const main = () => {
 
 
     if (userStor) {
+        
+        if(cartProducts.length > 0){
+            btnBuyNow.addEventListener("click", ()=>{
+                setTimeout(()=>{
+                    
+                    location.href= "buyNow.html"
+                },1000)
+                
+            })
+            btnBuyNow.style.display = "inline-block"
+
+        }else{
+            btnBuyNow.style.display = "none"
+        }
 
 
         modalDescription.addEventListener("click",(e)=>{
             if(e.target.classList.contains('btn-add-to-cart-modal')){
                 const target_id = e.target.id;
                 addToCart(target_id)
+                if(cartProducts.length > 0){
+                    btnBuyNow.style.display = "inline-block"
+                }
         
              }
             })
@@ -649,6 +674,10 @@ const main = () => {
             if(e.target.classList.contains('btn-add-to-cart')){
                 const target_id = e.target.id;
                 addToCart(target_id)
+                if(cartProducts.length > 0){
+                    btnBuyNow.style.display = "inline-block"
+                }
+
         
              }
             
@@ -697,6 +726,7 @@ const main = () => {
         contentShopping.addEventListener("click",(e)=>{
             if(e.target.classList.contains('btn-add-to-cart')){
                 viewDangerErrorCreate("Please register to activate the addition process")
+
                 setTimeout(()=>{
                     window.location.href ="login-register.html"
                 },3000)

@@ -297,10 +297,6 @@ var Controller = (()=>{
     var inti=()=>{
 
 
-
-
-        getCartProducts = Model.getCartProducts()
-
         
         btnResponsiveNav.addEventListener("click" , ()=>{
             if( linksNav.style.display == "none"){
@@ -341,6 +337,14 @@ var Controller = (()=>{
                                         
                     let total = Model.getTotal(cartProducts)
                     View.totalPriceProducts(total)
+
+
+                    if(cartProducts.length > 0){
+                        btnBuyNow.style.display = "inline-block"
+            
+                    }else{
+                        btnBuyNow.style.display = "none"
+                    }
                 
     
                  }
@@ -390,6 +394,14 @@ var Controller = (()=>{
 
                     let total = Model.getTotal(cartProducts)
                     View.totalPriceProducts(total)
+
+                    
+                    if(cartProducts.length > 0){
+                        btnBuyNow.style.display = "inline-block"
+            
+                    }else{
+                        btnBuyNow.style.display = "none"
+                    }
     
     
                  
@@ -410,14 +422,22 @@ var Controller = (()=>{
             closeCart.addEventListener("click", ()=>{
                 viewCart.style.width= "0%";
             })
-            
-            btnBuyNow.addEventListener("click", ()=>{
-                setTimeout(()=>{
+
+
+            if(cartProducts.length > 0){
+                btnBuyNow.addEventListener("click", ()=>{
+                    setTimeout(()=>{
+                        
+                        location.href= "buyNow.html"
+                    },1000)
                     
-                    location.href= "buyNow.html"
-                },1000)
-                
-            })
+                })
+                btnBuyNow.style.display = "inline-block"
+    
+            }else{
+                btnBuyNow.style.display = "none"
+            }
+            
             
             logoutIcon.addEventListener("click", ()=>{
                 localStorage.clear();
