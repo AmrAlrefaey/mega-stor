@@ -126,7 +126,9 @@ const delete_All = () =>{
     var alert = confirm('are you sour deleted')
     if (alert) {
         localStorage.removeItem('cartProducts')
-
+        
+        //megahed 
+        // cartProducts=[]
 
         cartProducts.splice(0);
 
@@ -427,7 +429,7 @@ const showData = (list) => {
             <h2>${element.title}</h2>
             <h4>${element.categoryTow}</h4>
             <div class="price-and-evaluation">
-            <h3>${element.price}</h3>
+            <h3>${element.price}$</h3>
             <div class="evaluation">
             <i class="fa-solid fa-star"></i>
             <i class="fa-solid fa-star"></i>
